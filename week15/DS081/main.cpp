@@ -7,7 +7,7 @@ class TreeNode {
 public:
     int val;
     TreeNode *left, *right;
-    TreeNode(int x){
+    TreeNode(int x) {
         val = x;
         left = right = NULL;
     }
@@ -15,7 +15,7 @@ public:
 
 TreeNode* buildTree(vector<int>& nums) {
     if (nums.empty() || nums[0] == 0) return NULL;
-    
+
     TreeNode* root = new TreeNode(nums[0]);
     queue<TreeNode*> q;
     q.push(root);
@@ -46,9 +46,11 @@ void inorderTraversal(TreeNode* root, vector<int>& result) {
 
 int main() {
     int size;
+    cout << "Enter the number of nodes: ";
     cin >> size;
 
     vector<int> nums(size);
+    cout << "Enter the node values in order: ";
     for (int i = 0; i < size; i++) {
         cin >> nums[i];
     }
@@ -57,17 +59,14 @@ int main() {
     vector<int> inorderResult;
     inorderTraversal(root, inorderResult);
 
-    cout << "inorder traversal ";
-    for (int val : inorderResult) {
-        cout << val << " ";
-    }
-    cout << endl;
-
-    cout << "역순 inorder traversal: ";
-    for (auto it = inorderResult.rbegin(); it != inorderResult.rend(); ++it) {
+    cout << "Inorder traversal: ";
+    for (vector<int>::iterator it = inorderResult.begin(); it != inorderResult.end(); ++it) {
         cout << *it << " ";
     }
     cout << endl;
+
+    cout << " Inorder traversal:";
+    for(vector<int>::iterator it )
 
     return 0;
 }
